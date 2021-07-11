@@ -1,0 +1,132 @@
+dim @a
+
+label 开始
+fame
+delay 50
+extract 说话,声望：[@a]
+delay 50
+if @a,<,100,结束
+ifstone <,50000,结束
+
+call 检查物品
+doffitem 园长通行证
+run 回记录点.xzs
+set 自动逃跑,1
+walkpos 89,51
+walkpos 87,49
+walkpos 85,48
+walkpos 83,48
+walkpos 81,48
+walkpos 77,47
+walkpos 77,46
+walkpos 77,45
+walkpos 75,44
+walkpos 73,43
+walkpos 72,42
+walkpos 72,42
+walkpos 72,38
+walkpos 72,36
+walkpos 73,36
+delay 10
+walkpos 74,36
+waitmap 100,5,开始
+walkpos 80,617
+walkpos 80,616
+walkpos 80,615
+walkpos 80,613
+walkpos 80,611
+walkpos 80,609
+walkpos 80,607
+walkpos 80,605
+walkpos 77,605
+walkpos 74,605
+walkpos 71,605
+walkpos 69,605
+walkpos 69,603
+walkpos 69,601
+walkpos 69,599
+walkpos 69,597
+walkpos 70,596
+walkpos 71,595
+walkpos 72,594
+walkpos 73,592
+walkpos 73,592
+walkpos 73,591
+walkpos 73,590
+walkpos 73,589
+walkpos 73,588
+walkpos 73,587
+delay 10
+walkpos 72,587
+waitmap 2030,5,开始
+walkpos 63,63
+walkpos 63,62
+walkpos 63,61
+walkpos 63,60
+walkpos 63,59
+ifitem 证,任意存在,继续通行
+label 买通行证
+w A
+delay 100
+buy 1|1
+delay 100
+ifitem 证,任意不存在,买通行证
+label 继续通行
+walkpos 61,59
+walkpos 59,59
+walkpos 57,59
+walkpos 55,59
+walkpos 53,59
+walkpos 51,59
+walkpos 49,59
+walkpos 47,59
+walkpos 45,59
+walkpos 43,59
+walkpos 43,61
+walkpos 43,62
+walkpos 44,62
+delay 100
+w C
+delay 100
+say hi
+delay 10
+waitdlg 进入,3,开始
+button 确定
+waitmap 2037,5,开始
+walkpos 2,6
+walkpos 4,6
+walkpos 5,6
+walkpos 5,7
+walkpos 5,8
+walkpos 5,9
+set 自动逃跑,0
+
+delay 10
+w C
+if @a,>,110,买五
+if @a,>,40,买二
+end 
+
+label 买五
+buy 7|5
+goto 吃豆
+end
+
+label 买二
+buy 7|2
+goto 吃豆
+end
+
+label 吃豆
+useitem 豆
+ifitem 豆,>,0,吃豆
+end
+
+label 结束
+say 没声望
+end
+
+label 检查物品
+doffitem 碎片|石头
+ifitem 碎片|石头,任意存在,-1
+return

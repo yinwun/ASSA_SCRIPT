@@ -1,0 +1,73 @@
+label 开始
+fame
+delay 50
+extract 说话,声望：[@a]
+delay 50
+if @a,<,100,结束
+ifstone <,50000,结束
+
+label 检测恶魔
+call 重登验证锁
+set 自动解锁,0
+ifitem 恶魔宝石,任意存在,解安全锁
+run 检测恶魔.xzs
+
+label 解安全锁
+set 自动解锁,1
+delay 100
+doffitem 恶魔
+delay 100
+ifsay 成功解锁,*,检查安全锁
+end
+
+label 检查安全锁
+ifitem 解锁,任意存在,使用安全锁
+goto 买解锁
+
+label 使用安全锁
+delay 100
+useitem 安全锁	
+ifsay 永久解锁,系统,结束
+goto 开始
+
+label 买解锁
+run 回记录点.xzs
+walkpos 89,51
+walkpos 87,53
+walkpos 85,55
+walkpos 83,56
+walkpos 81,56
+walkpos 79,56
+walkpos 77,56
+walkpos 75,56
+walkpos 73,56
+walkpos 71,56
+walkpos 69,56
+walkpos 67,56
+walkpos 65,56
+label 卡位1
+walkpos 63,56
+walkpos 61,56
+walkpos 60,56
+EO
+delay 100
+ifpos 60,56,到达
+goto 卡位1
+
+label 到达
+w G
+say 买
+delay 500
+buy 安全锁|1
+goto 开始
+end
+
+label 重登验证锁
+log 0			
+delay 1000
+check 重登,失败,-1	
+return
+
+label 结束
+print over
+end

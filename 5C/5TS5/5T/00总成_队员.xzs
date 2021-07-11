@@ -1,0 +1,161 @@
+label 开始
+'set 丢弃中为,1-15,利刺黄鲨碎片1|红珊瑚原液|蓝珊瑚原液|利刺黄鲨碎片2|利刺黄鲨碎片3|利刺黄鲨碎片4|利刺黄鲨碎片5|纯净的海水|氧气草|红色珊瑚碎片1|红色珊瑚碎片2|红色珊瑚碎片3|蓝色珊瑚碎片1|蓝色珊瑚碎片2|蓝色珊瑚碎片3|绿色珊瑚碎片1|天空的叁连贝|绿色珊瑚碎片2|绿色珊瑚碎片3|火山岩碎片1|火山岩碎片2|火山岩碎片3|风的石头|水的石头|火的石头|地的石头|超级海主人|超级姆伊
+set 锁定骑宠,1
+set 锁定战宠,1
+
+run 解散队伍.xzs
+run 补忠.xzs
+run 检查魅力.xzs
+run 补血.xzs
+
+ifstone <,200000,没钱
+
+check 人物,名称,=,渔村买料理,古瓜
+check 人物,名称,=,古瓜接任务,古瓜
+check 人物,名称,=,找伊吉欧1,古瓜
+check 人物,名称,=,打加加百人,古瓜
+check 人物,名称,=,卡鲁它那猜谜,古瓜
+check 人物,名称,=,渔村买特产,古瓜
+check 人物,名称,=,找伊吉欧2,古瓜
+check 人物,名称,=,找英嘉,古瓜
+check 人物,名称,=,拿地戒,古瓜
+check 人物,名称,=,拿战士枪,古瓜
+
+check 人物,名称,=,抓猪和鱼,动物园
+check 人物,名称,=,第一次找拉拉,动物园
+check 人物,名称,=,找园丁,动物园
+check 人物,名称,=,找七次拉拉,动物园
+check 人物,名称,=,打项圈,动物园
+check 人物,名称,=,有项圈找拉拉,动物园
+check 人物,名称,=,打黑色服,动物园
+check 人物,名称,=,有黑服找拉拉,动物园
+check 人物,名称,=,黑旗和席格,动物园
+check 人物,名称,=,带兔子找拉拉,动物园
+check 人物,名称,=,交出兔子,动物园
+check 人物,名称,=,拿拉拉铠,动物园
+
+check 人物,名称,=,成人over,黑蛙
+check 人物,名称,=,黑蛙over,转宠
+check 人物,名称,=,转宠over,练抗
+check 人物,名称,=,练抗over,天空
+check 人物,名称,=,天空over,金飞
+check 人物,名称,=,金飞over,动物园
+check 人物,名称,=,动物园over,神秘老人
+check 人物,名称,=,神秘老人over,盐矿
+check 人物,名称,=,盐矿over,古瓜
+check 人物,名称,=,古瓜over,梦幻洞窟
+check 人物,名称,=,梦幻over,地团长
+
+
+label 成人
+call 重登人物
+run 01成人.xzs
+run 丢物件.xzs 
+goto 开始
+
+label 黑蛙
+
+button 任务日志
+delay 2000
+check 任务,?,LIKE,*精灵王的传说*打完大黑*已完成},已经完成天空
+
+run 02黑蛙.xzs
+run 丢物件.xzs 
+goto 开始
+
+label 转宠
+run 03转宠.xzs
+goto 开始
+
+label 练抗
+run 04练抗.xzs
+run 丢物件.xzs 
+goto 开始
+
+label 天空
+run 05天空_队员.xzs
+run 丢物件.xzs 
+
+label 已经完成天空
+chname 人物,天空over
+run 解散队伍.xzs
+
+goto 开始
+
+label 金飞
+run 06金飞.xzs
+run 丢物件.xzs 
+goto 开始
+
+run 检查恶魔.xzs
+
+label 动物园
+button 任务日志
+delay 2000
+check 任务,?,LIKE,*动物园任务*交完任务拿到布衣胖*已完成},已经完成动物园
+run 07动物园.xzs
+run 丢物件.xzs 
+
+label 已经完成动物园
+chname 人物,动物园over
+goto 开始
+
+label 神秘老人
+
+button 任务日志
+delay 2000
+check 任务,?,LIKE,*再见精灵王*已完成},已经完成神秘老人
+
+run 08神秘老人.xzs
+run 丢物件.xzs 
+label 已经完成神秘老人
+chname 人物,神秘老人over
+goto 开始
+
+label 盐矿
+button 任务日志
+delay 2000
+check 任务,?,LIKE,*盐矿任务*{已完成},已经完成盐矿
+run 09盐矿.xzs
+run 丢物件.xzs 
+
+label 已经完成盐矿
+chname 人物,盐矿over
+goto 开始
+
+set 锁定战宠,1
+label 古瓜
+button 任务日志
+delay 2000
+check 任务,?,LIKE,*小小战士古瓜大大志向*已完成},已经完成古瓜
+
+run 10古瓜.xzs
+run 丢物件.xzs 
+
+label 已经完成古瓜
+chname 人物,古瓜over
+goto 开始
+
+label 梦幻洞窟
+run 11梦幻洞窟.xzs
+run 丢物件.xzs 
+goto 开始
+
+label 地团长
+run 12地团长.xzs
+run 丢物件.xzs 
+
+run 存5T.xzs
+run 丢物件.xzs
+chname 人物,
+end
+
+label 没钱
+run 赚钱.xzs
+goto 开始
+
+label 重登人物
+log 0			
+delay 1000
+check 重登,失败,-1	
+return

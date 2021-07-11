@@ -1,0 +1,6 @@
+label 记录点
+log 1
+delay 200
+waitmap 2000,5,记录点
+delay 200
+end

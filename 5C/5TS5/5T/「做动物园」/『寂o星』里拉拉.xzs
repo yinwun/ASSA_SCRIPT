@@ -1,0 +1,492 @@
+
+dim @pet
+let @pet,=,0
+
+label 开始
+check 人物,名称,=,第一次找拉拉,+23
+check 人物,名称,=,找七次拉拉,+22
+check 人物,名称,=,有项圈找拉拉,+21
+check 人物,名称,=,有黑服找拉拉,+20
+check 人物,名称,=,带兔子找拉拉,+19
+check 人物,名称,=,拿拉拉铠,+18
+cls
+'print ☆ 『寂o星』制作里拉拉任务脚本!谢谢使用!,6
+'print ☆ 任务要求:1.身上必须有"不可思议的贝壳",2
+'print ☆ 起点:必须纪录在地水火风伊甸园5城中的其中一城!您也可以接着动物园脚本运行,1
+'print ☆ 以上内容请大家认真阅读!谢谢!不然脚本出了错不要怪本人奥!确认后请点继续!,4
+'delay 1000
+'pause
+
+ifitem ?,=,不可思议的贝壳,+5
+'msg 『寂o星』提示:看来您没有认真阅读任务说明...准备重新运行脚本吧!
+cls
+'print ☆ 任务要求:1.身上必须有"不可思议的贝壳" 2.道具栏请空出2格以上的空位!,2
+end
+delay 1000
+ifmap 7000,+2
+goto +3
+ifpos 36,128,+5
+delay 100
+run 『寂o星』各城到伊甸园传送.xzs
+delay 1000
+waitmap 7000,-2
+walkpos 36,128 
+walkpos 37,128 
+walkpos 38,128 
+walkpos 39,128 
+walkpos 39,127 
+walkpos 39,126 
+walkpos 39,125 
+walkpos 39,124 
+walkpos 39,123 
+walkpos 39,122 
+walkpos 39,121 
+walkpos 39,120 
+walkpos 39,119 
+walkpos 39,118 
+walkpos 40,118 
+walkpos 41,118 
+walkpos 42,118 
+walkpos 43,118 
+walkpos 44,118 
+walkpos 45,118 
+walkpos 46,118 
+walkpos 47,118 
+walkpos 48,118 
+walkpos 49,118 
+walkpos 50,118 
+walkpos 51,118 
+walkpos 52,118 
+walkpos 53,118 
+walkpos 54,118 
+walkpos 55,118 
+walkpos 56,118 
+walkpos 57,118 
+walkpos 58,118 
+walkpos 59,118 
+walkpos 60,118 
+walkpos 61,118 
+walkpos 62,118 
+walkpos 63,118 
+walkpos 64,118 
+walkpos 65,118 
+walkpos 66,118 
+walkpos 67,118  
+walkpos 67,119 
+walkpos 67,120 
+walkpos 68,120 
+walkpos 69,120 
+walkpos 70,120 
+walkpos 71,120 
+walkpos 72,120 
+walkpos 73,120 
+walkpos 74,120 
+walkpos 75,120 
+walkpos 76,120 
+walkpos 77,120 
+walkpos 78,120 
+walkpos 79,120 
+walkpos 80,120 
+walkpos 81,120 
+walkpos 82,120 
+walkpos 83,120 
+walkpos 84,120 
+walkpos 85,120 
+walkpos 86,120 
+walkpos 87,120 
+walkpos 88,120 
+walkpos 89,120 
+walkpos 90,120 
+walkpos 91,120 
+walkpos 92,120 
+walkpos 93,120 
+walkpos 94,120 
+walkpos 95,120 
+walkpos 96,120 
+walkpos 97,120 
+walkpos 97,119 
+walkpos 97,118 
+walkpos 97,117 
+walkpos 97,116 
+walkpos 97,115 
+walkpos 97,114 
+walkpos 97,113 
+walkpos 97,112 
+walkpos 97,111 
+walkpos 97,110 
+walkpos 97,109 
+walkpos 97,108 
+walkpos 97,107 
+walkpos 98,107 
+walkpos 99,107 
+walkpos 101,107 
+walkpos 102,107 
+walkpos 103,107 
+walkpos 104,107 
+walkpos 105,107 
+walkpos 106,107 
+walkpos 107,107 
+walkpos 108,107 
+walkpos 109,107 
+walkpos 111,107 
+walkpos 112,107 
+walkpos 113,107 
+walkpos 113,106 
+walkpos 113,105 
+walkpos 113,104 
+walkpos 113,103 
+walkpos 113,102 
+walkpos 113,101 
+walkpos 113,100 
+walkpos 113,99 
+walkpos 113,98 
+walkpos 113,97 
+walkpos 113,96 
+walkpos 113,95 
+walkpos 113,94 
+walkpos 113,93 
+walkpos 113,92 
+walkpos 113,91 
+walkpos 113,90 
+walkpos 113,89 
+walkpos 113,88 
+walkpos 113,87 
+walkpos 113,86 
+walkpos 113,85 
+walkpos 113,84 
+walkpos 113,83 
+walkpos 113,82 
+walkpos 113,81 
+walkpos 113,80 
+walkpos 113,79 
+walkpos 113,78 
+walkpos 113,77
+walkpos 113,76 
+walkpos 113,75 
+walkpos 113,74 
+walkpos 113,73 
+walkpos 113,72 
+walkpos 113,71 
+walkpos 113,70 
+walkpos 113,69 
+walkpos 112,69 
+walkpos 112,68 
+walkpos 112,67 
+walkpos 112,66 
+walkpos 111,66 
+walkpos 110,66 
+walkpos 110,65 
+walkpos 110,64 
+walkpos 110,63 
+walkpos 110,62 
+walkpos 110,61 
+walkpos 110,60 
+walkpos 111,57 
+walkpos 112,57 
+walkpos 112,56 
+walkpos 112,55 
+walkpos 112,54 
+walkpos 111,54 
+label 里拉拉对话固定点对话
+walkpos 111,53 
+walkpos 111,52
+say /jk
+delay 2000
+check 坐标,!=,111,52,-4
+
+cls
+say 啦啦
+waitdlg ?,2,+1
+ifdlg 奇怪的外地人，哼……,对话完找园丁
+ifdlg 哇咧…………,对话完找园丁
+ifdlg （嗅……………………………………………）,第一次
+ifdlg 喂喂喂……,第二次
+ifdlg 你又来？,第三次
+ifdlg 你这个人类也太顽固了吧！,第四次
+ifdlg 你家乡那边的人，都跟你一样烦人吗？,第五次
+ifdlg 哈哈～～,第六次
+ifdlg 哦,第七次
+ifdlg 你手上的这件衣服是？！,交出黑色服
+ifdlg 拉拉啊拉拉－－,打完席格
+ifdlg 咦，你怎么还没送拉拉回去呢？,打完席格
+ifdlg 我刚刚去动物园看拉拉～～,拿里拉拉铠
+ifdlg 咿哟～～,无法拿里拉拉铠
+goto 开始
+end
+
+label 对话完找园丁
+waitdlg ?,2,+1
+ifdlg 奇怪的外地人，哼……,+2
+ifdlg 哇咧…………,+1
+button 确定
+waitdlg ?,2,返回
+button OK
+say 要开始找园丁拿‘铲子’噜^_^....请手动找园丁吧....^_^!
+end
+
+label 第一次
+button 下一页
+waitdlg （嗅嗅…………………………………………）,10,返回
+button 下一页
+waitdlg （嗅嗅嗅………………………………………）,10,返回
+button 下一页
+waitdlg （嗅嗅嗅嗅……………………………………）,10,返回
+button 下一页
+waitdlg （嗅…………嗅嗅…………嗅嗅嗅…………）,10,返回
+button 下一页
+delay 100
+ifdlg 这萝卜，是给我的？～～,NO.1
+ifdlg 这萝卜，是我吃过的没错吧？～～,NO.2
+ifdlg 帮我带着萝卜跑，会不会很辛苦啊？～～,NO.3
+label NO.1
+button 确定
+waitdlg 嘻～～,10,返回
+button OK
+print 第一次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+label NO.2
+button 确定
+waitdlg 嘻～～,10,返回
+button OK
+print 第二次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+label NO.3
+button 确定
+waitdlg 嘻～～,10,返回
+button OK
+print 第三次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+
+label 第二次
+button 下一页
+waitdlg 我不知道你是从什么地方来的，,10,返回
+button 下一页
+waitdlg 嗯嗯嗯，,10,返回
+button 下一页
+waitdlg …………,10,返回
+button 下一页
+waitdlg …………,10,返回
+button 下一页
+waitdlg 好啦，,10,返回
+button 确定
+waitdlg 真烦！…………,10,返回
+button OK
+print 第四次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+
+label 第三次
+button 下一页
+waitdlg 当然啦,10,返回
+button 下一页
+waitdlg 喔我懂了,10,返回
+button 下一页
+waitdlg 啊，不是要钱？,10,返回
+button 下一页
+waitdlg 也不是？,10,返回
+button 下一页
+waitdlg 咦，难道……,10,返回
+button 确定
+waitdlg 我就知道！哼！…………,10,返回
+button OK
+print 第五次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+
+label 第四次
+button 下一页
+waitdlg 你说有人看过我跟拉斯基讲悄悄话？,10,返回
+button 下一页
+waitdlg 你这个人很,10,返回
+button 下一页
+waitdlg 啊？,10,返回
+button 下一页
+waitdlg 哈哈你说的没错～～,10,返回
+button 下一页
+waitdlg 呃……,10,返回
+button 确定
+waitdlg 哼！别小看了我啦啦…………,10,返回
+button OK
+print 第六次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+
+label 第五次
+button 下一页
+waitdlg 你一定不放过我是吧？,10,返回
+button 下一页
+waitdlg 我也顺便放走了布伊胖和波波顿,10,返回
+button 下一页
+waitdlg 我为什么要救走拉拉？,10,返回
+button 下一页
+waitdlg 拉拉就是太软弱了,10,返回
+button 下一页
+waitdlg 我知道,10,返回
+button 确定
+waitdlg 好！,10,返回
+button OK
+print 第七次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+
+
+label 第六次
+delay 1000
+button 下一页
+delay 1000
+ifdlg 每次我经过那里，,宠圈第一次
+delay 1000
+waitdlg 每次我经过那里，,10,返回
+button 下一页
+waitdlg 都是你们这些人类,10,返回
+button 下一页
+waitdlg 唉,10,返回
+button 下一页
+waitdlg 希望你这次代我教训它们，,10,返回
+button 下一页
+waitdlg 话说回来，你比我想像中强嘛，,10,返回
+button 确定
+waitdlg 谢谢啰！～～,10,返回
+button OK
+print 第八次和兔子说话!!
+delay 100
+goto 里拉拉对话固定点对话
+
+label 第七次
+delay 1000
+button 下一页
+delay 1000
+ifdlg 唉,宠圈第二次
+delay 1000
+waitdlg 你们人类不是很聪明的吗？,10,返回
+button 下一页
+waitdlg 我一定要呼吁所有的动物觉醒！～～,10,返回
+button 下一页
+waitdlg 不过这当然是艰苦漫长又伟大的革命啰，,10,返回
+button 下一页
+waitdlg 如果你是爱好动物的人类，,10,返回
+button 下一页
+waitdlg 你是真的忘了我说拉拉在哪里啊？,10,返回
+button 确定
+waitdlg 拉拉就在，,10,返回
+button OK
+print 第九次和兔子说话!!
+delay 100
+goto 打宠圈
+
+label 宠圈第一次
+chname 人物,有项圈找拉拉
+print 拿宠圈第一次和兔子说话!!
+waitdlg 每次我经过那里，,10,返回
+button 下一页
+waitdlg 都是你们这些人类，,10,返回
+button 下一页
+waitdlg 唉，,10,返回
+button 下一页
+waitdlg 希望你这次代我教训它们，,10,返回
+button 下一页
+waitdlg 话说回来，你比我想像中强嘛，,10,返回
+button 确定
+waitdlg 谢谢啰！～～,10,返回
+button OK
+delay 100
+goto 里拉拉对话固定点对话
+
+label 宠圈第二次
+print 拿宠圈第二次和兔子说话!!,10,返回
+button 下一页
+waitdlg 它现在自由了，,10,返回
+button 下一页
+waitdlg 糟糕的是，它根本没有野外求生的能力！,10,返回
+button 下一页
+waitdlg 为什么拉拉这么依赖人类呢？……,10,返回
+button 下一页
+waitdlg 你说的也有道理……,10,返回
+button 确定
+waitdlg 唉，就照你说的去做吧，,10,返回
+button OK
+delay 2000
+goto 准备打黑色服
+
+label 交出黑色服
+print 交出黑色服..准备打黑色旗..!!,10,返回
+button 下一页
+waitdlg 我想起来了！,10,返回
+button 下一页
+waitdlg 他们每次都用很奇怪的眼光看着我，,10,返回
+button 下一页
+waitdlg 你说怎么都找不到拉拉，,10,返回
+button 下一页
+waitdlg 可是说也奇怪，,10,返回
+button 下一页
+waitdlg 难道是我啦啦错了吗？？,10,返回
+button 确定
+waitdlg 真是谢谢你了，,10,返回
+button OK
+delay 100
+goto 准备打黑色旗
+
+label 打宠圈
+cls
+print 该去林务局(20.165)打‘宠圈’了唷，打到后请重新启动剧本^^
+end
+
+label 准备打黑色服
+cls
+print 该去石象前(110.147)打‘黑色服’了唷^^
+delay 2000
+end
+
+label 准备打黑色旗
+cls
+print 从伊甸园(20.64)进入准备打"不良少年"拿‘黑色旗’噜^^
+end
+
+label 打完席格
+button 下一页
+waitdlg 喂拉拉别咬那个啦！,10,返回
+button 下一页
+waitdlg 不能自由固然很悲哀，,10,返回
+button 下一页
+waitdlg 拉拉，不要嚼人家的衣服！,10,返回
+button 下一页
+waitdlg 自由是需要实力来保障的，,10,返回
+button 下一页
+waitdlg 咳咳，拉拉－－,10,返回
+button 确定
+waitdlg 拉拉你再啃我的尾巴我要翻脸了…………,10,返回
+button OK
+cls
+print 先回动物园(32.96)进里面(29.10)跟沙利斯园长说话就可以获得‘布伊胖’一只唷^^
+print 再带着咬过的白萝卜去找里拉拉，就可以得到‘里拉拉赠送的铠’!!
+end
+
+label 拿里拉拉铠
+button 下一页
+waitdlg 也许有一天，拉拉变得又强壮又聪明，,10,返回
+button 下一页
+waitdlg 不过当然我还是得承认，,10,返回
+button 下一页
+waitdlg 只是如果你们能善用你们的智慧，,10,返回
+button 下一页
+waitdlg 喔对了，这个……,10,返回
+button 下一页
+waitdlg 怎么样？,10,返回
+button 确定
+waitdlg 接下来恐怕你还有不少地方要去逛逛，,10,返回
+button OK
+cls
+print 拿到里拉拉的铠噜，动物园解完噜^^
+end
+
+label 无法拿里拉拉铠
+cls
+print 很抱歉。。。不能拿到里拉拉的凯了，任务程序错误!!
+print 打完席格必须先找里拉拉报平安后，至动物园园长对话后，与里拉拉对话才拿的到铠唷^^
+end
+
+label 返回
+return

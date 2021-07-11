@@ -1,0 +1,42 @@
+label 开始
+ifpet 3,!=,空位,去卖宠
+end
+
+label 去卖宠
+run 回记录点.xzs
+walkpos 88,54
+walkpos 86,56
+walkpos 84,56
+walkpos 82,56
+walkpos 80,56
+walkpos 79,58
+delay 200
+walkpos 80,58
+waitmap 2003,5,开始
+walkpos 11,15
+walkpos 12,15
+walkpos 13,15
+walkpos 14,15
+walkpos 14,16
+walkpos 14,17
+walkpos 15,17
+walkpos 16,17
+label 1617
+walkpos 16,17
+delay 200
+check 坐标,!=,16,17,1617
+
+label 卖宠
+ifmap 2003,卖宠
+goto 开始
+set 锁定战宠,0
+
+walkpos 16,17
+delay 200
+w C
+sellpet 2|3|4|5
+delay 200
+ifpet 2|3|4|5,任意存在,卖宠	
+end
+
+

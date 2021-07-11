@@ -1,0 +1,16 @@
+label 补血
+run 回记录点.xzs
+walkpos 62,61
+walkpos 59,84
+label 卡位1
+walkpos 59,85
+walkpos 59,86
+EO
+ifpos 59,86,到达
+goto 卡位1
+
+label 到达
+w E
+say 补血
+
+end

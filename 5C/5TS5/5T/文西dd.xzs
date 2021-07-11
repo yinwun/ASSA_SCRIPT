@@ -1,0 +1,20 @@
+label s
+log 1
+waitmap 2000,1,-1
+delay 100
+ifpos 89,51,+2
+goto s
+walkpos 88,51 
+walkpos 88,50 
+walkpos 88,49 
+walkpos 88,48 
+w 88,48,C 
+say 【文西】脚本共用系列之瞬间传送功能-地城
+waitdlg 嗨,1,s
+button 确定
+button *1,442
+waitmap 7112,5,s
+end
+
+
+

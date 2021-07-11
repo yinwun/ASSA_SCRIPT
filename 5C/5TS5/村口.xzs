@@ -1,0 +1,25 @@
+label 开始
+run 回记录点.xzs
+
+walkpos 89,51
+walkpos 87,51
+walkpos 85,51
+walkpos 83,51
+walkpos 81,51
+walkpos 79,51
+walkpos 77,51
+walkpos 76,51
+walkpos 74,49
+walkpos 73,47
+walkpos 73,45
+walkpos 73,43
+walkpos 73,41
+walkpos 72,39
+walkpos 72,37
+walkpos 73,36
+delay 50
+walkpos 74,36
+waitmap 100,5,开始  
+walkpos 80,617
+walkpos 81,617   
+end

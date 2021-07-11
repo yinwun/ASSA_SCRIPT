@@ -1,0 +1,65 @@
+label 开始
+ifpet 3,!=,空位,结束
+run 检查魅力.xzs
+set 锁定战宠,0
+set 锁定骑宠,1
+run 买毒.xzs
+run 回记录点.xzs
+delay 100
+w 89,51,gg
+w 87,51,gg
+w 85,51,gg 
+walkpos 83,50 
+delay 100
+walkpos 83,50 
+w 83,50,A 
+delay 100
+say hi
+waitdlg 你又来了,2,开始
+button 确定
+waitdlg 目的地,2,开始
+delay 200
+button *3,442
+delay 200
+waitmap 5510,5,开始
+delay 200
+
+set 宠物捕捉,2
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,1
+set 捉宠魔法,武器精灵|10
+set 捉宠名称,布洛多斯
+set 遇敌方式,遇敌逃跑
+delay 100
+useitem 毒
+delay 300
+ifitem 103,!=,毒,-3
+
+label 原地遇敌
+delay 100
+set 快速遇敌,1
+
+label 抓宠
+delay 2000
+iffight >=,70,逃跑
+ifpet 3,!=,空位,结束
+goto 抓宠
+
+label 结束
+set 自动逃跑,1
+set 快速遇敌,0
+set 自动捉宠,0
+
+delay 200
+useitem 新手棍棒
+delay 400
+ifitem 103,!=,新手棍棒,-2
+end
+
+label 逃跑
+set 自动逃跑,1
+set 快速遇敌,0
+delay 200
+iffight >,0,逃跑
+goto 开始

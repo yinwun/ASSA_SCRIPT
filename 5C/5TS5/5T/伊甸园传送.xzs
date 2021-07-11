@@ -1,0 +1,587 @@
+
+dim @a
+
+label 开始
+ifstone <,200000,没钱
+
+delay 200
+check 人物,战斗,!=,0,-1
+log 1
+delay 1200
+ifmap 7012,伊甸园纪录点
+ifmap 7119,地城纪录点
+ifmap 7203,水城纪录点
+ifmap 7305,火城纪录点
+ifmap 7407,风城纪录点
+ifmap 2000,鱼村纪录点
+let @a,+,1
+if @a,>,9,+2
+goto 开始
+end
+
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+'任务说明:脚本从地城旅馆开始.
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+label 鱼村纪录点
+log 1
+waitmap 2000,1,-1
+delay 100
+ifpos 89,51,+2
+goto 鱼村纪录点
+walkpos 88,51 
+walkpos 88,50 
+walkpos 88,49 
+walkpos 88,48 
+w 88,48,C 
+say hi
+waitdlg 嗨,2,-11
+button 确定
+button *5,442
+waitmap 7000,5,-14
+end
+label 地城纪录点
+walkpos 19,10 
+walkpos 18,10 
+walkpos 17,10 
+walkpos 16,10 
+walkpos 16,11 
+walkpos 16,12 
+walkpos 16,13 
+walkpos 16,14 
+walkpos 16,15 
+walkpos 16,16 
+walkpos 16,17 
+walkpos 16,18 
+walkpos 16,19 
+walkpos 16,20 
+walkpos 16,21 
+walkpos 16,22 
+walkpos 16,23 
+walkpos 17,23 
+delay 500
+EO
+delay 800
+walkpos 17,24 
+waitmap 7112,-5 '塔耳塔地城西南区 
+walkpos 28,13 
+walkpos 28,14 
+walkpos 28,15 
+walkpos 28,16 
+walkpos 28,17 
+walkpos 28,18 
+walkpos 28,19 
+walkpos 28,20 
+walkpos 29,20 
+walkpos 30,20 
+walkpos 31,20 
+walkpos 32,20 
+walkpos 33,20 
+walkpos 34,20 
+walkpos 35,20 
+walkpos 36,20 
+walkpos 37,20 
+delay 500
+EO
+delay 800
+walkpos 38,20 
+waitmap 7100,5,-5 '塔耳塔地城西南区 
+walkpos 1,14 
+walkpos 2,14 
+walkpos 3,14 
+walkpos 4,14 
+walkpos 5,14 
+walkpos 5,13 
+walkpos 5,12 
+walkpos 5,11 
+walkpos 5,10 
+walkpos 5,9 
+walkpos 5,8 
+walkpos 5,7 
+walkpos 5,6 
+walkpos 5,5 
+walkpos 6,5 
+walkpos 7,5 
+walkpos 8,5 
+walkpos 9,5 
+walkpos 10,5 
+walkpos 12 
+walkpos 12,5 
+walkpos 13,5 
+walkpos 14,5 
+walkpos 14,4 
+walkpos 14,3 
+walkpos 14,2 
+delay 500
+EO
+delay 800
+walkpos 14,1 
+waitmap 7112,5,-5 '塔耳塔地城入口 
+walkpos 13,28 
+walkpos 13,27 
+walkpos 13,26 
+walkpos 13,25 
+walkpos 13,24 
+walkpos 13,23 
+walkpos 13,22 
+walkpos 13,21 
+walkpos 13,20 
+walkpos 14,20 
+walkpos 15,20 
+walkpos 16,20 
+walkpos 17,20 
+walkpos 18,20 
+walkpos 19,20 
+walkpos 20,20 
+walkpos 21,20 
+walkpos 21,19 
+walkpos 21,18 
+walkpos 21,17 
+walkpos 21,16 
+walkpos 21,15 
+walkpos 22,15 
+walkpos 23,15 
+walkpos 24,15 
+walkpos 25,15 
+walkpos 25,14 
+walkpos 25,13 
+walkpos 25,12 
+walkpos 25,11 
+walkpos 25,10 
+walkpos 24,10 
+walkpos 23,10 
+walkpos 22,10 
+walkpos 21,10 
+walkpos 21,9 
+walkpos 21,8 
+walkpos 21,7 
+walkpos 21,6 
+walkpos 20,6 
+label 地城传送
+walkpos 19,6 
+walkpos 18,6 
+delay 500
+EO
+delay 800
+check 座标,!=,18,6,-4
+w 18,6,A 
+say hi
+delay 1000
+waitdlg 嗨,2,地城传送
+button 确定
+waitdlg 选择,2,地城传送
+button *4,442
+delay 1000
+waitmap 7000,10,地城传送 '伊甸园 
+delay 1000
+goto 结束
+
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+'任务说明:脚本从水城旅馆开始.
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+label 水城纪录点
+walkpos 8,12 
+walkpos 8,13 
+walkpos 8,14 
+walkpos 8,15 
+walkpos 9,15 
+walkpos 10,15 
+walkpos 11,15 
+walkpos 12,15 
+walkpos 13,15 
+walkpos 14,15 
+walkpos 15,15 
+walkpos 16,15 
+walkpos 17,15 
+walkpos 18,15 
+walkpos 19,15 
+walkpos 20,15 
+walkpos 21,15 
+walkpos 22,15 
+walkpos 22,16 
+walkpos 22,17 
+walkpos 22,18 
+walkpos 22,19 
+walkpos 22,20 
+walkpos 22,21 
+walkpos 22,22 
+walkpos 22,23 
+walkpos 22,24 
+walkpos 22,25 
+walkpos 22,26 
+walkpos 22,27 
+walkpos 22,28 
+walkpos 22,29 
+walkpos 22,30 
+walkpos 22,31 
+walkpos 22,32 
+walkpos 22,33 
+walkpos 21,33 
+walkpos 20,33 
+walkpos 19,33 
+walkpos 18,33 
+walkpos 17,33 
+walkpos 17,34 
+walkpos 17,35 
+walkpos 17,36 
+delay 500
+EO
+delay 800
+walkpos 17,37 
+waitmap 7200,5,-5 '尼克斯水城 
+walkpos 19,47 
+walkpos 20,47 
+walkpos 21,47 
+walkpos 22,47 
+walkpos 23,47 
+walkpos 24,47 
+walkpos 25,47 
+walkpos 26,47 
+walkpos 27,47 
+walkpos 27,46 
+walkpos 27,45 
+walkpos 27,44 
+walkpos 27,43 
+walkpos 28,43 
+walkpos 29,43 
+walkpos 30,43 
+walkpos 30,42 
+walkpos 30,41 
+walkpos 31,41 
+walkpos 32,41 
+walkpos 33,41 
+walkpos 34,41 
+walkpos 35,41 
+walkpos 36,41 
+walkpos 37,41 
+walkpos 37,40 
+walkpos 37,39 
+walkpos 37,38 
+walkpos 37,37 
+walkpos 37,36 
+walkpos 37,35 
+label 水城传送
+walkpos 37,34 
+walkpos 37,33 
+delay 500
+EO
+delay 800
+check 座标,!=,37,33,-4
+w 37,33,A 
+say hi
+delay 1000
+waitdlg 嗨,2,水城传送
+button 确定
+waitdlg 选择,2,水城传送
+button *4,442
+delay 1000
+waitmap 7000,10,水城传送 '伊甸园 
+delay 1000
+goto 结束
+
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+'任务说明:脚本从火城旅馆开始.
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+label 火城纪录点
+delay 1000
+walkpos 20,10 
+walkpos 20,11 
+walkpos 20,12 
+walkpos 19,12 
+walkpos 18,12 
+walkpos 17,12 
+walkpos 16,12 
+walkpos 16,13 
+walkpos 16,14 
+walkpos 16,15 
+walkpos 15,15 
+walkpos 14,15 
+walkpos 13,15 
+walkpos 12,15 
+walkpos 11,15 
+walkpos 10,15 
+walkpos 9,15 
+walkpos 8,15 
+walkpos 7,15 
+walkpos 7,16 
+walkpos 6,16 
+walkpos 5,16 
+walkpos 4,16 
+walkpos 3,16 
+walkpos 2,16 
+walkpos 1,16 
+walkpos 1,15 
+walkpos 1,14 
+walkpos 1,13 
+delay 500
+EO
+delay 800
+walkpos 0,13 
+waitmap 7300,5,-5 '弗烈顿火城 
+walkpos 79,36 
+walkpos 78,36 
+walkpos 77,36 
+walkpos 76,36 
+walkpos 75,36 
+walkpos 74,36 
+walkpos 73,37 
+walkpos 72,38 
+walkpos 71,39 
+walkpos 70,40 
+walkpos 69,41 
+walkpos 68,42 
+walkpos 67,43 
+walkpos 66,44 
+walkpos 65,45 
+walkpos 64,46 
+walkpos 63,47 
+walkpos 62,48 
+walkpos 61,49 
+walkpos 60,49 
+walkpos 59,49 
+walkpos 58,49 
+walkpos 57,49 
+walkpos 56,49 
+walkpos 55,49 
+walkpos 54,49 
+walkpos 54,50 
+walkpos 54,51 
+walkpos 54,52 
+walkpos 54,53 
+walkpos 54,54 
+walkpos 54,55 
+walkpos 54,56 
+walkpos 54,57 
+walkpos 54,58 
+walkpos 54,59 
+walkpos 54,60 
+walkpos 54,61 
+walkpos 54,62 
+walkpos 54,63 
+walkpos 54,64 
+walkpos 54,65 
+walkpos 54,66 
+walkpos 54,67 
+walkpos 54,68 
+walkpos 54,69 
+walkpos 54,70 
+walkpos 54,71 
+walkpos 54,72 
+walkpos 55,72 
+walkpos 56,72 
+walkpos 56,73 
+walkpos 56,74 
+walkpos 56,75 
+walkpos 56,76 
+walkpos 56,77 
+walkpos 56,78 
+walkpos 57,78 
+walkpos 57,79 
+walkpos 57,80 
+walkpos 57,81 
+walkpos 57,82 
+walkpos 57,83 
+walkpos 57,84 
+walkpos 57,85 
+walkpos 57,86 
+walkpos 57,87 
+walkpos 57,88 
+walkpos 57,89 
+walkpos 57,90 
+walkpos 57,91 
+walkpos 58,92 
+walkpos 59,93 
+walkpos 60,94 
+walkpos 61,95 
+walkpos 62,96 
+walkpos 63,97 
+walkpos 64,98 
+walkpos 65,99 
+walkpos 66,100 
+walkpos 67,101 
+walkpos 68,101 
+walkpos 69,101 
+walkpos 70,101 
+walkpos 71,101 
+walkpos 72,101 
+walkpos 73,101 
+walkpos 74,101 
+walkpos 75,101 
+walkpos 76,101 
+walkpos 77,101 
+walkpos 78,101 
+walkpos 79,101 
+walkpos 79,100 
+walkpos 79,99 
+walkpos 80,99 
+walkpos 81,99 
+walkpos 82,99 
+walkpos 83,99 
+walkpos 84,99 
+walkpos 85,99 
+walkpos 86,99 
+walkpos 87,99
+label 火城传送
+walkpos 88,99 
+walkpos 88,100 
+delay 500
+EO
+delay 800
+check 座标,!=,88,100,-4
+w 88,100,E 
+say hi
+delay 1000
+waitdlg 嗨,2,火城传送
+button 确定
+waitdlg 选择,2,火城传送
+button *4,442
+delay 1000
+waitmap 7000,10,火城传送 '伊甸园 
+delay 1000
+goto 结束
+
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+'任务说明:脚本从风城旅馆开始.
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+label 风城纪录点
+walkpos 25,6 
+walkpos 24,7 
+walkpos 23,8 
+walkpos 22,9 
+walkpos 21,9 
+walkpos 20,9 
+walkpos 19,9 
+walkpos 18,9 
+walkpos 17,9 
+walkpos 16,9 
+walkpos 15,9 
+walkpos 14,9 
+walkpos 13,9 
+walkpos 13,10 
+walkpos 13,11 
+walkpos 13,12 
+walkpos 13,13 
+walkpos 12,13 
+walkpos 11,13 
+walkpos 10,13 
+walkpos 9,13 
+walkpos 8,13 
+walkpos 7,13 
+walkpos 6,13 
+walkpos 5,13 
+walkpos 4,13 
+delay 500
+EO
+delay 800
+walkpos 3,13 
+waitmap 7400,5,-5 '亚伊欧风城 
+walkpos 101,77 
+walkpos 100,77 
+walkpos 99,77 
+walkpos 99,78 
+walkpos 99,79 
+walkpos 99,80 
+walkpos 99,81 
+walkpos 99,82 
+walkpos 99,83 
+walkpos 99,84 
+walkpos 99,85 
+walkpos 99,86 
+walkpos 99,87 
+walkpos 99,88 
+label 风城传送
+walkpos 99,89 
+walkpos 99,90 
+delay 500
+EO
+delay 800
+check 座标,!=,99,90,-4
+w 99,90,C 
+say hi
+delay 1000
+waitdlg 嗨,2,风城传送
+button 确定
+waitdlg 选择,2,风城传送
+button *4,442
+delay 1000
+waitmap 7000,10,风城传送 '伊甸园
+delay 1000
+goto 结束
+
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+'任务说明:脚本从伊甸园旅馆开始.
+'☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+
+label 伊甸园纪录点
+delay 1000
+walkpos 6,7 
+walkpos 6,8 
+walkpos 6,9 
+walkpos 6,10 
+walkpos 7,10 
+walkpos 8,10 
+walkpos 9,10 
+walkpos 10,10 
+walkpos 11,10 
+walkpos 12,10 
+walkpos 13,10 
+walkpos 14,10 
+walkpos 15,10 
+walkpos 16,10 
+walkpos 16,11 
+walkpos 16,12 
+walkpos 16,13 
+walkpos 16,14 
+walkpos 16,15 
+walkpos 16,16 
+walkpos 16,17 
+walkpos 16,18 
+walkpos 16,19 
+walkpos 16,20 
+walkpos 16,21 
+walkpos 16,22 
+walkpos 16,23 
+walkpos 15,23 
+walkpos 14,23 
+delay 500
+EO
+delay 800
+walkpos 14,24 
+waitmap 7000,5,-5 '伊甸园 
+walkpos 39,116 
+walkpos 39,117 
+walkpos 39,118 
+walkpos 39,119 
+walkpos 39,120 
+walkpos 39,121 
+walkpos 39,122 
+walkpos 39,123 
+walkpos 39,124 
+walkpos 39,125 
+walkpos 39,126 
+walkpos 39,127 
+walkpos 39,128 
+walkpos 38,128 
+walkpos 37,128 
+walkpos 36,128 
+walkpos 35,128 
+delay 500
+EO
+delay 800
+check 座标,!=,35,128,-4
+waitmap 7000,30 '伊甸园 
+delay 1000
+goto 结束
+
+label 结束
+end
+
+label 没钱
+run 赚钱.xzs
+goto 开始
+
+label .err.
+goto 开始

@@ -1,0 +1,10 @@
+label 开始
+ifstone >,200000,结束
+run 抓鱼.xzs
+run 练C.xzs
+run 卖宠.xzs
+goto 开始
+
+
+label 结束
+end

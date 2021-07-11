@@ -1,0 +1,441 @@
+dim @练到
+
+run 检测恶魔.xzs
+run 回记录点.xzs
+
+set 锁定骑宠,1
+set 锁定战宠,0
+set 自动逃跑,1
+set 吃补血肉,1
+set 丢非血肉,1
+set 丢弃中为,1-15,地的石头|水的石头|火的石头|风的石头|超级姆依|超级海主人
+
+
+label 开始
+delay 200
+
+
+label 开始练MM
+delay 200
+
+let @练到,=,1
+check 宠物,2,=,已喂石,检测MM级数
+
+
+
+label 检测MM级数
+check 宠物5,LV,=,1,call 练到六级
+check 宠物5,LV,<,11,call 练到十一级
+check 宠物5,LV,<,16,call 练到十六级
+check 宠物5,LV,<,21,call 练到二十一级
+check 宠物5,LV,<,26,call 练到二十六级
+check 宠物5,LV,<,31,call 练到三十一级
+check 宠物5,LV,<,36,call 练到三十六级
+check 宠物5,LV,<,41,call 练到四十一级
+check 宠物5,LV,<,46,call 练到四十六级
+check 宠物5,LV,<,51,call 练到五十一级
+check 宠物5,LV,<,56,call 练到五十六级
+set 自动换宠,0	
+
+end
+
+
+label 练到六级
+set 自动换宠,2:6|3:6|4:6|5:6
+say 开始练级！,5
+let @练到,=,6
+delay 1000
+walkpos 62,58 
+walkpos 64,60 
+walkpos 66,62 
+walkpos 66,65 
+walkpos 66,68 
+walkpos 66,71 
+walkpos 68,74 
+walkpos 72,75 
+walkpos 76,75 
+walkpos 78,78 
+walkpos 79,80 
+walkpos 82,81 
+walkpos 86,81 
+walkpos 90,81 
+walkpos 93,82 
+walkpos 95,82 
+walkpos 97,82 
+walkpos 102,81 
+walkpos 106,81 
+walkpos 108,81 
+delay 200
+waitmap 100,5,开始 
+call 开打
+call 改回称呼
+return
+
+label 练到十一级
+set 自动换宠,2:11|3:11|4:11|5:11
+say 开始练级！,5
+let @练到,=,11
+delay 1000
+walkpos 62,58 
+walkpos 64,60 
+walkpos 66,62 
+walkpos 66,65 
+walkpos 66,68 
+walkpos 66,71 
+walkpos 68,74 
+walkpos 72,75 
+walkpos 76,75 
+walkpos 78,78 
+walkpos 79,80 
+walkpos 82,81 
+walkpos 86,81 
+walkpos 90,81 
+walkpos 93,82 
+walkpos 95,82 
+walkpos 97,82 
+walkpos 102,81 
+walkpos 106,81 
+walkpos 108,81 
+delay 200
+waitmap 100,5,开始 
+call 开打
+call 改回称呼
+return
+
+
+label 练到十六级
+set 自动换宠,2:16|3:16|4:16|5:16
+say 开始练级！,5
+let @练到,=,16
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+w 66,55,B 
+delay 200
+call 说话
+waitdlg ?,2,-5
+button *1,1
+waitmap 10001,5,-1
+delay 200
+set 自动逃跑,1
+walkpos 10,12 
+walkpos 10,14 
+walkpos 10,16 
+walkpos 10,18 
+walkpos 12,19 
+walkpos 14,20 
+walkpos 17,20 
+walkpos 20,20 
+walkpos 23,18 
+walkpos 26,16 
+walkpos 29,14 
+walkpos 31,12 
+walkpos 33,10 
+walkpos 35,8 
+walkpos 37,6 
+walkpos 39,5 
+walkpos 40,4 
+walkpos 40,3 
+waitmap 100,10,-2
+delay 200
+set 自动逃跑,0
+call 开打
+call 改回称呼
+return
+
+
+label 练到二十一级
+set 自动换宠,2:21|3:21|4:21|5:21
+say 开始练级！,5
+let @练到,=,21
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+w 66,55,B 
+delay 200
+call 说话
+waitdlg ?,2,-5
+button *1,1
+waitmap 10001,5,-1
+delay 200
+set 自动逃跑,1
+walkpos 10,12 
+walkpos 10,14 
+walkpos 10,16 
+walkpos 10,18 
+walkpos 12,19 
+walkpos 14,20 
+walkpos 17,20 
+walkpos 20,20 
+walkpos 23,18 
+walkpos 26,16 
+walkpos 29,14 
+walkpos 31,12 
+walkpos 33,10 
+walkpos 35,8 
+walkpos 37,6 
+walkpos 39,5 
+walkpos 40,4 
+walkpos 40,3 
+waitmap 100,10,-2
+delay 200
+set 自动逃跑,0
+call 开打
+call 改回称呼
+return
+
+
+label 练到二十六级
+set 自动换宠,2:26|3:26|4:26|5:26
+say 开始练级！,5
+let @练到,=,26
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *1,1
+waitmap 10001,3,-1
+call 开打
+call 改回称呼
+
+return
+
+
+label 练到三十一级
+set 自动换宠,2:31|3:31|4:31|5:31
+say 开始练级！,5
+let @练到,=,31
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *1,1
+waitmap 10001,3,-1
+call 开打
+call 改回称呼
+return
+
+
+label 练到三十六级
+set 自动换宠,2:36|3:36|4:36|5:36
+say 开始练级！,5
+let @练到,=,36
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *1,1
+waitmap 10001,3,-1
+call 开打
+call 改回称呼
+
+return
+
+label 练到四十一级
+set 自动换宠,2:41|3:41|4:41|5:41
+say 开始练级！,5
+let @练到,=,41
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *1,1
+waitmap 10001,3,-1
+call 开打
+call 改回称呼
+
+return
+
+label 练到四十六级
+set 自动换宠,2:46|3:46|4:46|5:46
+say 开始练级！,5
+let @练到,=,46
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *2,1
+waitmap 31401,3,-1
+call 开打
+call 改回称呼
+
+return
+
+label 练到五十一级
+set 自动换宠,2:51|3:51|4:51|5:51
+say 开始练级！,5
+let @练到,=,51
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *2,1
+waitmap 31401,3,-1
+call 开打
+call 改回称呼
+return
+
+label 练到五十六级
+set 自动换宠,2:56|3:56|4:56|5:56
+say 开始练级！,5
+let @练到,=,56
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *2,1
+waitmap 31401,3,-1
+call 开打
+call 改回称呼
+return
+
+label 练到六十一级
+set 自动换宠,2:61|3:61|4:61|5:61
+say 开始练级！,5
+let @练到,=,61
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *3,1
+waitmap 30503,3,-1
+call 开打
+call 改回称呼
+return
+
+label 练到六十六级
+set 自动换宠,2:66|3:66|4:66|5:66
+say 开始练级！,5
+let @练到,=,66
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *3,1
+waitmap 30503,3,-1
+call 开打
+call 改回称呼
+
+return
+
+
+label 练到七十二级
+set 自动换宠,2:72|3:72|4:72|5:72
+say 开始练级！,5
+let @练到,=,72
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *3,1
+waitmap 30503,3,-1
+call 开打
+call 改回称呼
+return
+
+label 练到七十九级
+set 自动换宠,2:79|3:79|4:79|5:79
+say 开始练级！,5
+let @练到,=,79
+delay 1000
+walkpos 62,58 
+walkpos 63,58 
+walkpos 64,57 
+walkpos 65,56 
+walkpos 66,55 
+call 说话
+waitdlg ?,2,-5
+button *4,1
+waitmap 30301,3,-1
+call 开打
+call 改回称呼
+return
+
+
+end
+______________________________________
+
+
+label 说话
+cls
+say 〖文西-Zero〗0转人物到六转全智能脚本之天空黑蛙练MM环节买~,5
+return
+
+label 开打
+cls
+set 自动逃跑,0
+'useitem ?恶魔宝石
+'delay 1000
+'ifsay 你感受,系统,+2
+'goto -3
+set 快速遇敌,1
+delay 800
+label ks
+delay 500
+check 宠物5,LV,<,@练到,ks
+set 自动逃跑,1
+set 快速遇敌,0
+delay 1000
+return
+
+
+
+label 改回称呼
+log 1
+waitmap 2000,1,-1
+waitpos 89,51,5,-2
+delay 1000
+chname 宠物2,
+return
+
+
+
+label 结束
+end
+

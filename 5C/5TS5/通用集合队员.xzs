@@ -1,0 +1,53 @@
+set 战斗结束,0
+delay 800
+say /jk
+delay 800
+
+label 开始
+ifmap 12003,Runbegin
+ifmap 2003,Runbegin
+ifmap 2000,Runbegin
+ifmap 200,Runbegin
+run 修正坐标_T.xzs
+
+dim @y,@x
+check npc,樊硕段,玩家,存在,+2
+delay 100
+goto 获取坐标
+end
+
+label 获取坐标
+getnearpos 樊硕段,玩家,@x,@y,$dir
+delay 100
+postest @x,@y,可到达,+2
+goto 开始
+EO
+delay 100
+walkpos @x,@y		'走到npc对面的坐标上
+w $dir 				'人物转向npc
+delay 100
+goto 等待加入
+end
+
+label 等待加入
+join 1,樊硕段
+delay 500
+check 在队伍中,是,结束
+check 战斗结束,>=,600,重登人物
+goto 开始
+end
+
+label 结束
+set 自动逃跑,0
+say 结束
+end
+
+label Runbegin
+run 1.队员.xzs
+end
+
+label 重登人物
+log 0			
+delay 1000
+check 重登,失败,-1
+goto 开始

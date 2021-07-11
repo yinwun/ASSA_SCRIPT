@@ -1,0 +1,63 @@
+label 开始
+ifitem 101-109,有,驯兽戒指,结束
+run 回记录点.xzs
+walkpos 89,51
+walkpos 87,53
+walkpos 85,55
+walkpos 83,56
+walkpos 81,56
+walkpos 79,57
+walkpos 77,59
+walkpos 75,61
+walkpos 73,61
+walkpos 71,61
+walkpos 69,61
+walkpos 67,61
+walkpos 65,61
+walkpos 63,61
+walkpos 62,61
+walkpos 62,61
+walkpos 60,63
+walkpos 59,65
+walkpos 59,67
+walkpos 59,69
+walkpos 59,71
+walkpos 59,73
+walkpos 59,75
+walkpos 59,77
+walkpos 59,79
+walkpos 59,81
+walkpos 59,83
+walkpos 59,85
+walkpos 59,86
+walkpos 59,86
+walkpos 61,88
+walkpos 63,90
+walkpos 65,92
+walkpos 67,94
+walkpos 67,95
+w C
+delay 200
+getitem 仓库,毒|驯兽戒指
+delay 200
+ifitem 毒|驯兽戒指,任意不存在,没道具
+useitem 驯兽戒指
+delay 100
+ifitem 驯兽戒指,任意存在,-2
+useitem 毒
+delay 100
+ifitem 毒,任意存在,-2
+end
+
+label 没道具
+pause
+end
+
+label 结束
+end
+
+
+label .err.
+writelog $[错误信息]
+goto 开始
+end

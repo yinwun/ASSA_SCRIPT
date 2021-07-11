@@ -1,0 +1,27 @@
+label 开始
+run 回记录点.xzs
+walkpos 88,51
+walkpos 88,50
+walkpos 88,49
+walkpos 88,48
+walkpos 87,48
+walkpos 86,48
+walkpos 85,48
+walkpos 84,48
+walkpos 83,48
+walkpos 82,48
+walkpos 81,48
+walkpos 80,48
+walkpos 79,48
+walkpos 79,47
+
+label 检查队伍
+w A
+join 1
+check 在队伍中,是,组队完成
+goto 检查队伍
+end
+
+label 组队完成
+
+end

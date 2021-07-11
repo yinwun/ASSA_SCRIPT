@@ -1,0 +1,328 @@
+label 开始
+run 回记录点.xzs
+
+check 人物,转生,=,4,清空宠物
+goto 成人
+
+label 清空宠物
+doffpet 2-5
+delay 500
+ifpet 2-5,!=,空位,清空宠物
+
+label 成人
+walkpos 87,51
+walkpos 85,51
+walkpos 83,51
+walkpos 81,51
+walkpos 79,51
+walkpos 77,51
+walkpos 75,51
+walkpos 75,53
+walkpos 75,55
+walkpos 73,55
+walkpos 71,55
+walkpos 69,55
+walkpos 67,55
+walkpos 65,55
+walkpos 64,55
+walkpos 64,53
+walkpos 64,51
+walkpos 62,51
+walkpos 60,51
+walkpos 58,51
+walkpos 56,51
+walkpos 54,51
+walkpos 54,50
+walkpos 54,49
+delay 10
+w A
+delay 10
+say hi
+delay 10
+ifsay 以后也要不断,其它,取守护兽
+delay 10
+waitdlg 成人,3,开始
+button 确定,234
+delay 10
+waitdlg 本来,3,开始
+button OK,231
+delay 10
+waitdlg 年青人,3,开始
+button 确定,235
+waitdlg 这么一来,3,地
+button OK
+
+label 取守护兽
+walkpos 54,50
+walkpos 54,51
+walkpos 52,51
+walkpos 50,51
+walkpos 48,51
+walkpos 46,51
+walkpos 44,51
+walkpos 43,51
+delay 100
+
+label 地
+w F
+delay 10
+say hi
+delay 10
+waitdlg ?,3,地
+button 确定,235
+waitdlg ?,3,地
+button OK
+
+label 水
+w D
+delay 10
+say hi
+delay 10
+waitdlg ?,3,水
+button 确定,235
+waitdlg ?,3,水
+button OK
+
+walkpos 44,51
+walkpos 46,51
+walkpos 47,51
+
+label 火
+w F
+delay 10
+say hi
+delay 10
+waitdlg ?,3,地
+button 确定,235
+waitdlg ?,3,火
+button OK
+
+label 风
+w D
+delay 10
+say hi
+delay 10
+waitdlg ?,3,风
+button 确定,235
+waitdlg ?,3,风
+button OK
+
+label 精灵王
+say /jk
+delay 500
+walkpos 47,49
+walkpos 47,47
+walkpos 47,45
+walkpos 47,43
+walkpos 48,43
+delay 10
+w C
+delay 10
+say hi
+waitdlg ?,3,精灵王
+button 确定
+waitdlg ?,3,精灵王
+button *7,442
+
+waitmap 32021,5,开始
+walkpos 29,53
+walkpos 29,52
+walkpos 30,52
+walkpos 31,52
+label 卡位精灵王1
+delay 10
+w A
+delay 10
+say hi
+waitdlg 前进,3,出现验证码
+button OK
+delay 100
+ifsay 有误,*,出现验证码
+waitdlg ?,3,出现验证码
+button OK
+delay 100
+ifsay 有误,*,出现验证码
+
+ifpos 32,47,+2
+goto 开始
+delay 10
+walkpos 32,45
+walkpos 32,43
+walkpos 32,41
+walkpos 32,39
+walkpos 32,37
+walkpos 32,35
+walkpos 31,34
+walkpos 31,33
+goto 判断转身宠
+
+label 有宠转身
+
+set 自动逃跑,0
+set 自动捉宠,0
+
+label 卡转身
+delay 800
+say /jk
+delay 800
+walkpos 31,32
+walkpos 31,31
+walkpos 31,30
+walkpos 31,29
+delay 10
+w A
+delay 10
+say hi
+waitdlg ?,3,卡转身
+button 下一页
+waitdlg ?,3,卡转身
+button OK
+waitdlg ?,3,卡转身
+button 下一页
+waitdlg ?,3,卡转身
+button OK
+delay 800
+doffpet 2-5
+delay 800
+ifpet 2-5,!=,空位,-2
+end
+
+label 停止验证码
+pause
+end
+
+label 出现验证码
+log 0			
+delay 1000
+check 重登,失败,-1	
+goto 卡位精灵王1
+
+label 判断转身宠
+check 人物,转生,=,0,检查1转宠物
+check 人物,转生,=,1,检查2转宠物
+check 人物,转生,=,2,检查3转宠物
+check 人物,转生,=,3,检查4转宠物
+check 人物,转生,=,4,检查5转宠物
+goto 有宠转身
+
+label 检查1转宠物
+ifpet 大地守护兽,任意存在,有宠转身
+call 抓地
+goto 有宠转身
+
+label 检查2转宠物
+ifpet 水的守护兽,任意存在,有宠转身
+call 抓水
+goto 有宠转身
+
+label 检查3转宠物
+ifpet 火的守护兽,任意存在,有宠转身
+call 抓火
+goto 有宠转身
+
+label 检查4转宠物
+ifpet 风的守护兽,任意存在,有宠转身
+call 抓风
+goto 有宠转身
+
+label 检查5转宠物
+ifpet 风的守护兽|火的守护兽|大地守护兽|水的守护兽,全部存在,有宠转身
+doffpet 2-5
+delay 800
+ifpet 2-5,!=,空位,-2
+ifpet 大地守护兽,任意存在,+2
+call 抓地
+ifpet 水的守护兽,任意存在,+2
+call 抓水
+ifpet 火的守护兽,任意存在,+2
+call 抓火
+ifpet 风的守护兽,任意存在,+2
+call 抓风
+goto 检查5转宠物
+
+
+label 抓地
+ifpet 大地守护兽,任意存在,+8
+set 捉宠名称,大地守护兽
+call 设置抓宠
+call 去抓转生宠
+delay 2000
+set 捉宠名称,大地守护兽
+say hi
+delay 100
+check 人物,战斗,=,0,-3
+ifpet 大地守护兽,任意不存在,-5
+return
+
+label 抓风
+ifpet 风的守护兽,任意存在,+8
+set 捉宠名称,风的守护兽
+call 设置抓宠
+call 去抓转生宠
+delay 2000
+set 捉宠名称,风的守护兽
+say hi
+delay 100
+check 人物,战斗,=,0,-3
+ifpet 风的守护兽,任意不存在,-5
+return
+
+label 抓火
+ifpet 火的守护兽,任意存在,+8
+set 捉宠名称,火的守护兽
+call 设置抓宠
+call 去抓转生宠
+delay 2000
+set 捉宠名称,火的守护兽
+say hi
+delay 100
+check 人物,战斗,=,0,-3
+ifpet 火的守护兽,任意不存在,-5
+return
+
+label 抓水
+ifpet 水的守护兽,任意存在,+8
+set 捉宠名称,水的守护兽
+call 设置抓宠
+call 去抓转生宠
+delay 2000
+set 捉宠名称,水的守护兽
+say hi
+delay 100
+check 人物,战斗,=,0,-3
+ifpet 水的守护兽,任意不存在,-5
+return
+
+
+label 设置抓宠
+useitem 毒
+delay 800
+ifitem 103,!=,毒,-2
+delay 50
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,1
+set 捉宠魔法,3
+set 锁定骑宠,0
+set 锁定战宠,0
+set 捉宠魔法,武器精灵|30
+set 遇敌方式,遇敌逃跑
+return
+
+label 去抓转生宠
+walkpos 32,32
+walkpos 33,32
+walkpos 34,32
+walkpos 34,31
+delay 800
+say /jk
+delay 800
+walkpos 35,30
+walkpos 36,29
+delay 100
+w A
+delay 100
+return
+
+
+

@@ -1,0 +1,10 @@
+label 开始
+delay 200
+check 在队伍中,是,解散队伍
+end
+
+label 解散队伍
+join 0
+delay 200
+goto 开始
+end

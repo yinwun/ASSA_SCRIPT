@@ -1,0 +1,149 @@
+
+label 开始
+run 『寂o星』各城到伊甸园传送.xzs
+waitmap 7000,30,+1
+label 动物园交通
+walkpos 34,128 
+walkpos 34,127 
+walkpos 34,126 
+walkpos 34,125 
+walkpos 34,124 
+walkpos 34,123 
+walkpos 34,122 
+walkpos 34,121 
+walkpos 34,120 
+walkpos 34,119 
+walkpos 34,118 
+walkpos 34,117 
+walkpos 34,116 
+walkpos 34,115 
+walkpos 34,114 
+walkpos 34,113 
+walkpos 34,112 
+walkpos 34,111 
+walkpos 34,110 
+walkpos 34,109 
+walkpos 34,108 
+walkpos 34,107 
+walkpos 34,106 
+walkpos 34,105 
+walkpos 34,104 
+walkpos 34,103 
+walkpos 34,102 
+walkpos 34,101 
+walkpos 33,100 
+walkpos 32,99 
+walkpos 31,98 
+walkpos 31,97 
+walkpos 31,96
+walkpos 31,95 
+waitmap 7001,5,-6 '动物园 
+walkpos 21,58 
+walkpos 21,57 
+walkpos 21,56 
+walkpos 21,55 
+walkpos 21,54 
+walkpos 21,53 
+walkpos 22,53 
+walkpos 22,52 
+walkpos 22,51 
+walkpos 22,50 
+walkpos 22,49 
+walkpos 22,48 
+walkpos 22,47 
+walkpos 22,46 
+walkpos 22,45 
+walkpos 22,44 
+walkpos 22,43 
+walkpos 22,42 
+walkpos 22,41 
+walkpos 22,40 
+walkpos 22,39 
+walkpos 22,38 
+walkpos 22,37 
+walkpos 22,36 
+walkpos 22,35 
+walkpos 22,34 
+walkpos 22,33 
+walkpos 22,32 
+walkpos 22,31 
+walkpos 22,30 
+walkpos 22,29 
+walkpos 22,28 
+walkpos 22,27 
+walkpos 22,26 
+walkpos 22,25 
+walkpos 22,24 
+walkpos 22,23 
+walkpos 22,22 
+walkpos 22,21 
+walkpos 22,20 
+walkpos 22,19 
+walkpos 22,18 
+walkpos 22,17 
+walkpos 22,16 
+walkpos 23,16 
+walkpos 24,16 
+walkpos 25,16 
+walkpos 25,15 
+walkpos 25,14 
+walkpos 25,13 
+walkpos 25,12 
+walkpos 25,11 
+walkpos 25,10 
+walkpos 26,10 
+walkpos 27,10 
+walkpos 28,10 
+walkpos 28,11 
+walkpos 28,12
+
+label 找沙利斯园长
+say /jk
+delay 200
+let $char,=,沙利斯园长
+call 找NPC对话
+
+say hi,1
+waitdlg ?,2,找沙利斯园长
+
+'---------------------------------------------------------
+
+label 跟随1
+say hi,1
+delay 500
+waitdlg ?,2,找沙利斯园长
+'waitdlg 哇,1,10,找沙利斯园长
+ifdlg 还好,已经完成
+'ifdlg 如果你对这些,拿到红色兔子
+ifdlg 哇,+2
+delay 100
+button 确定
+waitdlg 嗯,2,找沙利斯园长
+button 下一页
+waitdlg 关于,2,找沙利斯园长
+button OK
+delay 1000
+end
+
+label 已经完成
+print 已经完成
+end
+
+label 找NPC对话
+check npc,$char,系统,存在,+3
+msg 没找到队应NPC
+goto 找NPC对话
+delay 100
+getnearpos $char,系统,@x,@y,$dir
+delay 100
+postest @x,@y,可到达,+3
+msg NPC不可到达
+goto +3
+walkpos @x,@y		'走到npc对面的坐标上
+w $dir 				'人物转向npc
+delay 100
+return
+
+label 拿到红色兔子
+ifpet ?,=,动物园养的拉斯基,已经完成
+goto 跟随1

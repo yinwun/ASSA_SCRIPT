@@ -1,0 +1,47 @@
+label 开始
+ifpet 1,!=,布洛多斯,去取宠
+end
+
+label 去取宠
+run 回记录点.xzs
+walkpos 88,54
+walkpos 86,56
+walkpos 84,56
+walkpos 82,56
+walkpos 80,56
+walkpos 79,58
+delay 200
+walkpos 80,58
+waitmap 2003,5,开始
+walkpos 11,15
+walkpos 12,15
+walkpos 13,15
+walkpos 14,15
+walkpos 14,16
+walkpos 14,17
+walkpos 15,17
+walkpos 16,17
+label 1617
+walkpos 16,17
+delay 200
+check 坐标,!=,16,17,1617
+
+label 大仓1
+walkpos 16,17
+delay 200
+w C
+delay 200
+say hi
+waitdlg ?,1,大仓1
+button *4,261
+waitdlg ?,1,大仓1
+button *1,511
+waitdlg ?,1,大仓1
+button *2,512
+waitdlg ?,1,大仓1
+select 1
+waitdlg ?,1,大仓1
+button 确定
+end
+
+

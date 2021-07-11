@@ -1,0 +1,85 @@
+set 登入帐号,FX03|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX03|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+set 登入帐号,FX11|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX11|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+set 登入帐号,FX15|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX15|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+set 登入帐号,FX03|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX03|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+set 登入帐号,FX25|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX25|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+set 登入帐号,FX26|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX26|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+set 登入帐号,FX27|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX27|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+set 登入帐号,FX28|123456aa|654321aa|人物一|5TS5\1.队员.xzs|default.set|电信 17专线shiqi.so|无|队员
+log 0
+delay 1000
+check 重登,失败,-1
+check 人物,转生,!=,5,开始
+
+let $s,=,FX28|123456aa|
+let $s,+,$[人物名称]
+writelog $s
+
+end
+
+label 开始
+run 1.队员.xzs
+end

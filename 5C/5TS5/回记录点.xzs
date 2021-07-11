@@ -1,0 +1,20 @@
+label 记录点
+run 解散队伍.xzs
+call 新人记录
+delay 100
+log 1
+delay 200
+check 战斗开始,>,600,重登人物
+waitmap 2000,5,记录点
+delay 200
+end
+
+label 重登人物
+log 0			
+delay 1000
+check 重登,失败,-1	
+return
+
+label 新人记录
+run 走路记录.xzs
+return

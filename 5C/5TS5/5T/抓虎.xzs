@@ -1,0 +1,83 @@
+label 开始
+ifpet 萨格鲁,>=,4,结束
+check 人物,魅力,>=,50,去抓宠
+run 检查魅力.xzs
+
+label 去抓宠
+doffpet 2-5
+delay 200
+ifpet 2-5,!=,空位,-2
+
+call 离开队伍
+
+run 回记录点.xzs
+walkpos 88,51 
+walkpos 86,51 
+label 卡位无敌传送
+walkpos 84,50 
+delay 100
+w A
+delay 100
+say 无敌传送
+waitdlg 你又来了,2000,开始
+button 确定,441
+waitdlg 目的地,2000,开始
+button *5,442
+waitmap 7352,5,开始
+
+label 设置抓
+set 宠飞换宠,0
+chpet 0
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,1
+set 锁定战宠,0
+set 捉宠名称,萨格鲁
+set 捉宠魔法,武器精灵|10
+set 遇敌方式,遇敌逃跑
+
+label 装武器
+set 战斗结束,0
+set 自动逃跑,1
+useitem 毒
+delay 800
+ifitem 103,!=,毒,装武器
+delay 50
+set 自动逃跑,0
+delay 50
+
+set 快速遇敌,1
+
+label 抓宠
+check 战斗结束,>=,60,装武器
+check 人物,回合,>,200,装武器
+ifpet 萨格鲁,>=,4,结束
+goto 抓宠
+
+label 结束
+set 快速遇敌,0
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,0
+run 回记录点.xzs
+delay 200
+useitem 新手棍棒
+ifitem 103,!=,新手棍棒,-2
+
+call 重登人物
+set 快速遇敌,0
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,0
+end
+
+label 重登人物
+log 0			
+delay 1000
+check 重登,失败,-1	
+return
+
+label 离开队伍
+join 0
+check 在队伍中,是,离开队伍
+return

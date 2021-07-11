@@ -1,0 +1,197 @@
+label 开始
+set 自动逃跑,1
+check 坐标,=,363,536,363536
+check 坐标,=,391,593,391593
+check 坐标,=,388,570,388570
+check 坐标,=,387,544,387544
+check 坐标,=,366,566,366566
+check 坐标,=,317,589,317589
+check 坐标,=,326,555,326555
+check 坐标,=,355,594,355594
+check 坐标,=,376,585,376585
+run 1.队员.xzs
+'377 554
+
+label 376585
+walkpos 376,585
+walkpos 377,583
+walkpos 377,581
+walkpos 377,579
+walkpos 377,577
+walkpos 377,575
+walkpos 377,573
+walkpos 377,571
+walkpos 377,569
+walkpos 377,567
+walkpos 377,565
+walkpos 377,563
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 363536
+walkpos 363,536
+walkpos 365,538
+walkpos 367,540
+walkpos 368,542
+walkpos 370,544
+walkpos 372,546
+walkpos 374,548
+walkpos 376,550
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 391593
+walkpos 391,593
+walkpos 389,591
+walkpos 387,589
+walkpos 385,587
+walkpos 383,585
+walkpos 381,583
+walkpos 379,581
+walkpos 377,579
+walkpos 377,577
+walkpos 377,575
+walkpos 377,573
+walkpos 377,571
+walkpos 377,569
+walkpos 377,567
+walkpos 377,565
+walkpos 377,563
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 388570
+walkpos 388,570
+walkpos 386,568
+walkpos 384,566
+walkpos 382,564
+walkpos 380,562
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 387544
+walkpos 387,544
+walkpos 385,546
+walkpos 383,548
+walkpos 381,550
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 366566
+walkpos 366,566
+walkpos 368,564
+walkpos 370,562
+walkpos 372,560
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 317589
+walkpos 317,589
+walkpos 319,587
+walkpos 321,585
+walkpos 323,583
+walkpos 325,581
+walkpos 327,579
+walkpos 329,577
+walkpos 331,575
+walkpos 333,573
+walkpos 335,571
+walkpos 337,569
+walkpos 339,567
+walkpos 340,565
+walkpos 342,565
+walkpos 344,564
+walkpos 346,562
+walkpos 348,560
+walkpos 350,558
+walkpos 352,556
+walkpos 354,554
+walkpos 356,554
+walkpos 358,554
+walkpos 360,554
+walkpos 362,554
+walkpos 364,554
+walkpos 366,554
+walkpos 368,554
+walkpos 370,554
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 326555
+walkpos 326,555
+walkpos 328,554
+walkpos 330,554
+walkpos 332,554
+walkpos 334,554
+walkpos 336,554
+walkpos 338,554
+walkpos 340,554
+walkpos 341,556
+walkpos 343,556
+walkpos 345,555
+walkpos 347,554
+walkpos 349,554
+walkpos 351,554
+walkpos 353,554
+walkpos 355,554
+walkpos 357,554
+walkpos 359,554
+walkpos 361,554
+walkpos 363,554
+walkpos 365,554
+walkpos 367,554
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+
+label 355594
+walkpos 355,594
+walkpos 357,592
+walkpos 359,590
+walkpos 359,588
+walkpos 357,587
+walkpos 356,585
+walkpos 354,584
+walkpos 354,582
+walkpos 355,580
+walkpos 357,578
+walkpos 359,576
+walkpos 361,574
+walkpos 362,572
+walkpos 363,570
+walkpos 365,568
+walkpos 367,566
+walkpos 369,564
+walkpos 371,562
+walkpos 377,561
+walkpos 377,559
+walkpos 377,557
+walkpos 377,555
+end
+ 
+ 
+ 
+ 

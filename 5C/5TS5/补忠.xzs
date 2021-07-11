@@ -1,0 +1,70 @@
+label 开始
+check 人物,魅力,<=,50,end
+ifstone <,30000,end
+run 回记录点.xzs
+walkpos 88,52 
+walkpos 88,53 
+w 88,53,D 
+
+label 检查忠诚
+check 宠物1,忠诚,<,99,补忠诚1
+check 宠物2,忠诚,<,99,补忠诚2
+check 宠物3,忠诚,<,99,补忠诚3
+check 宠物4,忠诚,<,99,补忠诚4
+check 宠物5,忠诚,<,99,补忠诚5
+end
+
+label 补忠诚1
+say buy
+delay 500
+buy 忠诚之心|1
+delay 500
+ifitem 忠诚之心,任意不存在,开始
+delay 500
+useitem 忠诚之心,1
+goto 检查忠诚
+end
+
+label 补忠诚2
+say buy
+delay 500
+buy 忠诚之心|1
+delay 500
+ifitem 忠诚之心,任意不存在,开始
+delay 500
+useitem 忠诚之心,2
+goto 检查忠诚
+end
+
+label 补忠诚3
+say buy
+delay 500
+buy 忠诚之心|1
+delay 500
+ifitem 忠诚之心,任意不存在,开始
+delay 500
+useitem 忠诚之心,3
+goto 检查忠诚
+end
+
+label 补忠诚4
+say buy
+delay 500
+buy 忠诚之心|1
+delay 500
+ifitem 忠诚之心,任意不存在,开始
+delay 500
+useitem 忠诚之心,4
+goto 检查忠诚
+end
+
+label 补忠诚5
+say buy
+delay 500
+buy 忠诚之心|1
+delay 500
+ifitem 忠诚之心,任意不存在,开始
+delay 500
+useitem 忠诚之心,5
+goto 检查忠诚
+end

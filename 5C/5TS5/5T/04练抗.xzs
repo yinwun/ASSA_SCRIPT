@@ -1,0 +1,105 @@
+label 开始
+
+label s
+set 自动逃跑,1
+run 回记录点.xzs
+
+delay 200
+check 宠物1,HP,<,100,y
+check 人物,魅力,<,80,m
+check 宠物1,忠诚,>,98,+2
+goto z
+set 自动KNPC,1
+set 自动逃跑,0
+set 人物一般,防御
+set 锁定骑宠,1
+set 锁定战宠,0
+walkpos 86,52 
+walkpos 83,53 
+walkpos 80,54 
+walkpos 77,54 
+walkpos 75,55 
+walkpos 73,56 
+walkpos 71,58 
+walkpos 69,60 
+walkpos 68,62 
+walkpos 67,64 
+walkpos 67,66 
+walkpos 68,67 
+label l
+walkpos 69,68 
+w 69,68,D 
+say xx。,6
+delay 1000
+ifsay 水抗魔值提升为77,*,已成
+ifsay 水抗魔值提升为77,*,已成
+ifsay 水抗魔值提升为77,*,已成
+ifsay 水抗魔值提升为77,*,已成
+ifsay 水抗魔值下降为75,*,已成
+ifsay 水抗魔值下降为75,*,已成
+ifsay 水抗魔值提升为75,*,已成
+ifsay 水抗魔值提升为75,*,已成
+check 骑宠,HP,<,100,s
+check 游戏状态,=,战斗,-10
+check 游戏状态,!=,战斗,-12
+goto y
+set 自动逃跑,1
+set 人物一般,攻击
+set 人物首次,0
+set 锁定骑宠,1
+set 锁定战宠,1
+delay 3000
+end
+
+label y
+run 补血.xzs
+goto s
+
+label z
+run 补忠.xzs
+goto s
+
+
+label m
+run 检查魅力.xzs
+goto s
+
+
+label xy
+log 1
+delay 2000
+walkpos 86,52 
+walkpos 83,53 
+walkpos 79,54 
+walkpos 76,55 
+walkpos 73,56 
+walkpos 70,58 
+walkpos 68,61 
+walkpos 68,64 
+walkpos 68,67 
+walkpos 69,68 
+cls
+w 69,68,ff
+w 67,70,ff
+w 65,72,ff  
+w 63,74,ee
+w 63,76,ee  
+w 63,78,ee  
+w 63,80,ee 
+w 63,82,ff 
+w 61,84,ff 
+w 59,86,E 
+say xx。,6
+return
+
+
+label 已成
+set 自动逃跑,1
+set 人物一般,攻击
+set 人物首次,0
+set 锁定骑宠,1
+set 锁定战宠,1
+chname 人物,练抗over
+delay 500
+check 游戏状态,=,战斗,已成
+end

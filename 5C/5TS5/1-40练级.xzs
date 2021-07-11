@@ -1,0 +1,125 @@
+label 开始
+set 快速遇敌,0
+check 人物,LV,<,10,村口
+check 人物,LV,<,30,阿布
+check 人物,LV,<,40,奇努伊
+check 人物,LV,<,60,龟洞
+check 人物,LV,<,80,地下
+label 取消战斗
+set 快速遇敌,0
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,0
+check 游戏状态,=,战斗,取消战斗
+end
+
+label 村口
+run 村口.xzs
+call 开始战斗
+check 人物,LV,>,10,开始
+delay 2000
+goto -2
+
+label 阿布
+ifmap 10001, 阿布战斗
+run 去练级NPC.xzs
+delay 100
+w A
+say hi
+delay 100
+button *1,1
+delay 100
+ifmap 10001,+2
+goto 阿布
+label 阿布战斗
+call 开始战斗
+check 人物,LV,>,30,开始
+delay 2000
+goto -2
+goto 开始
+
+label 奇努伊
+ifmap 31401, 奇努伊战斗
+run 去练级NPC.xzs
+delay 100
+w A
+say hi
+delay 100
+button *2,1
+delay 100
+ifmap 31401,+2
+goto 奇努伊
+label 奇努伊战斗
+call 开始战斗
+check 人物,LV,>,40,开始
+delay 2000
+goto -2
+goto 开始
+
+
+label 龟洞
+ifmap 30503, 龟洞战斗
+run 去练级NPC.xzs
+delay 100
+w A
+say hi
+delay 100
+button *3,1
+delay 100
+ifmap 30503,+2
+goto 龟洞
+label 龟洞战斗
+call 开始战斗
+check 人物,LV,>,60,开始
+delay 2000
+goto -2
+goto 开始
+
+label 地下
+ifmap 30301, 检测等级
+run 去练级NPC.xzs
+delay 100
+w A
+say hi
+delay 100
+button *4,1
+delay 100
+ifmap 30301,+2
+goto 地下
+label 地下战斗
+call 开始战斗
+check 人物,LV,>,80,开始
+delay 2000
+goto -2
+goto 开始
+
+
+label 开始战斗
+call 一类锁定
+delay 100
+set 自动逃跑,0
+set 快速遇敌,1
+return
+
+label 检测等级
+delay 2000
+
+check 战斗结束,>=,600,开始战斗
+check 人物,LV,>,80,开始
+check 人物,LV,>,60,地下
+check 人物,LV,>,40,龟洞
+check 人物,LV,>,30,奇努伊
+goto 检测等级
+end
+
+label 一类锁定
+set 锁定战宠,4
+set 锁定骑宠,1
+check 人物,转生,>,0,call 二类锁定
+return 
+
+label 二类锁定
+delay 100
+set 锁定战宠,1
+set 锁定骑宠,0
+return

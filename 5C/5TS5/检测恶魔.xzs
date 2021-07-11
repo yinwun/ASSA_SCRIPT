@@ -1,0 +1,34 @@
+label 开始
+ifitem 恶魔宝石,任意存在,结束
+
+label 补恶魔
+ifmap 2000,去特殊
+delay 200
+
+label 去特殊
+run 回记录点.xzs
+walkpos 87,52
+walkpos 85,53
+walkpos 83,53
+walkpos 81,53
+walkpos 79,53
+walkpos 76,54
+walkpos 73,54
+walkpos 70,54
+walkpos 67,54
+walkpos 64,54
+walkpos 62,56
+walkpos 61,57
+walkpos 60,57
+walkpos 59,57
+w A
+
+buy 恶魔宝石|2
+delay 100
+goto 开始
+end
+
+
+label 结束
+say 结束
+end

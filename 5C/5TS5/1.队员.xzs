@@ -1,0 +1,214 @@
+dim @level
+let @level,=,9
+cls
+
+label 开始
+set 锁定骑宠,1
+set 锁定战宠,1
+set 战斗结束,0
+set 自动解锁,1
+set 断线重登,1
+set 出错重启,1
+set 脚本显示,1
+set 自动加点,体力:300|腕力:50|耐力:600
+set 丢弃中为,碎片
+'377 554
+
+call 检查tasks
+run 解散队伍.xzs
+
+label 吃豆
+useitem 豆
+ifitem 豆,>,0,吃豆
+
+run 穿新手.xzs
+check 人物,转生,=,0,call 打肉记录
+check 人物,转生,>,0,call 直接记录
+run 补血.xzs
+run 买豆.xzs
+check 人物,lv,=,140,是否转身
+run 1-40练级.xzs
+run 解锁.xzs
+
+
+run 检查魅力.xzs
+run 补忠.xzs
+run 补血.xzs
+
+
+ifpet 1,=,空位,未转生
+check 宠物1,LV,<,149,去传送
+check 人物,LV,=,150,做5T任务
+goto 去传送
+
+end
+
+label 去传送
+set 快速遇敌,0
+set 自动逃跑,1
+set 自动捉宠,0
+run 回记录点.xzs
+walkpos 88,51
+walkpos 87,51
+walkpos 86,51
+walkpos 86,52
+walkpos 86,53
+walkpos 86,54
+walkpos 85,54
+walkpos 84,54
+walkpos 83,54
+walkpos 82,54
+walkpos 81,54
+walkpos 80,54
+walkpos 79,54
+walkpos 78,54
+walkpos 77,54
+walkpos 76,54
+walkpos 75,54
+walkpos 74,54
+walkpos 73,54
+walkpos 72,54
+walkpos 71,54
+walkpos 70,54
+walkpos 69,55
+walkpos 68,55
+walkpos 67,55
+delay 100
+w A
+if @level,=,9,去海底
+end
+
+label 去海底
+w A
+say hi
+waitdlg 传送,3,去传送
+button 下一页
+waitdlg 传送,3,去传送
+button *@level,1
+delay 100
+ifmap 817,检查坐标
+goto 开始
+
+label 检查坐标
+run 检查坐标.xzs
+run 修正坐标_T.xzs
+
+label 卡位1
+EO
+walkpos 377,554
+delay 200
+check 坐标,!=,377,554,卡位1
+run 通用集合队员.xzs
+goto 开始战斗
+end
+
+label 是否转身
+check 人物,转生,=,0,未转生
+check 人物,转生,>,0,去传送
+end
+
+label 未转生
+join 0
+check 在队伍中,是,未转生
+run 未转卖宠.xzs
+run 取毒兽环.xzs
+run 竞技买毒.xzs
+run 买豆.xzs
+run 取绿雷.xzs
+chname 人物,140
+ifpet 布洛多斯,>=,1,去传送
+run 抓宠.xzs
+chname 人物,140
+goto 去传送
+end
+
+label 打肉记录
+run 记录渔村.xzs
+return 
+
+label 直接记录
+run 走路记录.xzs
+return
+
+label 开始战斗
+set 战斗结束,0
+set 自动逃跑,0
+delay 100
+check 人物,转生,>,0,call 二类锁定 
+check 人物,转生,=,0,call 检测锁定
+ifmap 2000,去传送
+check 在队伍中,否,去传送
+
+label 检测等级
+delay 2000
+check 在队伍中,否,去传送
+check 战斗结束,>=,600,开始
+check 人物,lv,=,140,是否已已经做过
+check 宠物1,LV,<,149,检测等级
+check 人物,LV,=,150,做5T任务
+check 人物,LV,>=,140,call 三类锁定
+goto 检测等级
+end
+
+label 是否已已经做过
+check 人物,转生,>,0,检测等级
+check 人物,称号,!=,140,是否转身
+goto 检测等级
+end
+
+label 一类锁定
+set 锁定骑宠,1
+set 锁定战宠,4
+return 
+
+label 二类锁定
+check 人物,转生,=,0,+3
+set 锁定骑宠,0
+goto +2
+set 锁定骑宠,1
+set 锁定战宠,1
+return 
+
+label 三类锁定
+set 锁定骑宠,1
+set 锁定战宠,1
+return 
+
+label 检测锁定
+check 人物,lv,>=,140,call 二类锁定
+check 人物,lv,<,140,call 一类锁定
+return
+
+label 做5T任务
+check 人物,名称,=,地团长over,检查换号
+set 自动逃跑,1
+run 解散队伍.xzs
+ifpet 1,=,空位,未转生
+run 丢物件.xzs
+run 5T\00总成_队员.xzs
+label 检查换号
+check 人物,转生,=,5,换号
+goto 可以转身了
+end
+
+label 可以转身了
+chname 人物,
+run 解散队伍.xzs
+
+label 去转身
+run 转身.xzs
+goto 开始
+end
+
+label 检查tasks
+button 任务日志
+delay 2000
+check 任务,?,LIKE,*雷尔-1*地精灵战士团*已完成},+2
+return
+check 人物,转生,=,5,换号
+goto 可以转身了
+return
+
+label 换号
+run 换号.xzs
+end

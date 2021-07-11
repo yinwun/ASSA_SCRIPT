@@ -1,0 +1,123 @@
+label 开始
+ifpet 梅鲁莎,>=,4,结束
+check 人物,魅力,>=,50,去抓宠
+run 检查魅力.xzs
+
+label 去抓宠
+call 丢宠物
+run 竞技买毒.xzs
+call 离开队伍
+
+
+run 回记录点.xzs
+walkpos 88,51 
+walkpos 86,51 
+walkpos 84,52 
+walkpos 82,53 
+walkpos 80,54 
+walkpos 78,54 
+walkpos 76,54 
+walkpos 75,55 
+walkpos 73,56 
+walkpos 71,56 
+walkpos 69,56 
+walkpos 67,56 
+walkpos 65,56 
+walkpos 63,55 
+walkpos 61,54 
+walkpos 59,54 
+walkpos 57,54 
+walkpos 55,53 
+walkpos 53,52 
+walkpos 51,51 
+walkpos 49,50 
+walkpos 47,48 
+walkpos 47,46 
+label 卡位无敌传送
+walkpos 47,44 
+walkpos 47,43 
+walkpos 48,43 
+delay 100
+w C
+delay 100
+say 无敌传送
+waitdlg MM景点,2000,去抓宠
+button 确定
+waitdlg 目的地,2000,卡位无敌传送
+button *6,442
+waitmap 40,2000,去抓宠
+
+label 海底通道
+walkpos 10,3 
+walkpos 12,3 
+delay 100
+walkpos 13,2 
+w A
+delay 100
+say 无敌传送
+waitdlg 海底,2000,海底通道
+button 确定
+waitmap 31301,2000,去抓宠
+walkpos 10,105
+
+label 设置抓
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,1
+set 捉宠魔法,3
+set 捉宠名称,梅鲁莎
+set 捉宠魔法,武器精灵|10
+set 遇敌方式,遇敌逃跑
+
+label 装武器
+set 自动逃跑,1
+delay 100
+useitem 毒
+ifitem 103,!=,毒,装武器
+delay 50
+set 自动逃跑,0
+delay 50
+
+set 快速遇敌,1
+
+label 抓宠
+set 捉宠名称,梅鲁莎
+check 人物,回合,>,200,设置抓
+ifpet 梅鲁莎,>=,4,结束
+goto 抓宠
+
+label 结束
+set 快速遇敌,0
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,0
+run 回记录点.xzs
+delay 200
+useitem 新手棍棒
+ifitem 103,!=,新手棍棒,-2
+
+call 重登人物
+set 快速遇敌,0
+set 捉宠等级,0
+set 自动逃跑,0
+set 自动捉宠,0
+end
+
+label 重登人物
+log 0			
+delay 1000
+check 重登,失败,-1	
+return
+
+label 离开队伍
+join 0
+check 在队伍中,是,离开队伍
+return
+
+label 丢宠物
+ifpet 2,=,玛恩摩洛斯,丢掉宠物2
+ifpet 2,=,洛卡伦恩,丢掉宠物2
+return
+label 丢掉宠物2
+doffpet 2
+goto 丢宠物

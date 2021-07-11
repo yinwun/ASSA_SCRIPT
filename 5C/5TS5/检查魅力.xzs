@@ -1,0 +1,48 @@
+label 开始
+delay 100
+fame
+delay 50
+extract 说话,声望：[@a]
+delay 50
+if @a,<,60,结束
+ifstone <,30000,end
+check 人物,魅力,<=,50,加魅力
+end
+
+label 加魅力
+run 回记录点.xzs
+walkpos 89,51
+walkpos 87,53
+walkpos 85,55
+walkpos 83,56
+walkpos 81,56
+walkpos 79,56
+walkpos 77,56
+walkpos 75,56
+walkpos 73,56
+walkpos 71,56
+walkpos 69,56
+walkpos 67,56
+walkpos 65,56
+label 卡位1
+walkpos 63,56
+walkpos 61,56
+walkpos 60,56
+EO
+delay 100
+ifpos 60,56,到达
+goto 卡位1
+
+label 到达
+w G
+say 买
+delay 500
+buy 魅力橘子|1
+delay 500
+useitem ?魅力橘子
+goto 开始
+end
+
+label 结束
+say 魅力检查结束
+end

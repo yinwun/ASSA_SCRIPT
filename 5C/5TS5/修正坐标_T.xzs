@@ -1,0 +1,26 @@
+label 开始
+delay 100
+set 自动逃跑,1
+check 游戏状态,=,战斗,开始
+ifmap 2000,回去
+ifmap 12003,回去
+ifmap 2003,回去
+eo
+delay 100
+label 卡位1
+walkpos 377,554
+delay 100
+check 坐标,!=,377,554,卡位1
+set 自动逃跑,0
+check 战斗结束,>=,1800,重新登陆
+end
+
+label 回去
+run 回记录点.xzs
+end
+
+label 重新登陆
+log 0
+delay 5000
+check 重登,失败,重新登陆
+end

@@ -1,0 +1,43 @@
+label 开始
+check 人物,魅力,<=,80,检查丢物件
+end
+
+label 加魅力
+delay 100
+fame
+delay 50
+extract 说话,声望：[@a]
+delay 50
+if @a,<,60,结束
+
+
+
+run 回记录点.xzs
+walkpos 65,56
+label 卡位1
+walkpos 63,56
+walkpos 60,56
+EO
+delay 100
+ifpos 60,56,到达
+goto 卡位1
+
+label 到达
+w G
+say 买
+delay 500
+buy 魅力橘子|1
+delay 500
+useitem ?魅力橘子
+goto 开始
+end
+
+label 结束
+say 魅力检查结束
+end
+
+label 检查丢物件
+ifitem 碎片,任意存在,+2
+goto 加魅力
+doffitem 碎片
+goto 检查丢物件

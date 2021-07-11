@@ -1,0 +1,29 @@
+dim @y,@x
+label 开始
+let @x,=,@[X坐标]
+let @y,=,@[Y坐标]
+delay 500
+ifmap 3008,结束
+
+label 继续走一步
+delay 2000
+let @y,-,1
+postest @x,@y,可到达,+2
+goto +2
+walkpos @x,@y
+say hi
+check 人物,战斗,=,0,开始
+cls
+ifsay 我是第100个人,*,结束
+goto -3
+
+end
+
+label 结束
+
+end
+
+
+label 找NPC
+check npc,第 100 个弟子,系统,存在,结束
+return

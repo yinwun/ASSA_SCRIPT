@@ -1,0 +1,43 @@
+label 开始
+run 丢物件.xzs
+button 任务日志
+delay 2000
+check 任务,?,LIKE,*成人仪式*已完成},已成人
+
+
+run 回记录点.xzs
+
+walkpos 86,52 
+walkpos 83,53 
+walkpos 80,54 
+walkpos 76,54 
+walkpos 73,55 
+walkpos 70,56 
+walkpos 67,56 
+walkpos 64,55 
+walkpos 61,54 
+walkpos 58,52 
+walkpos 56,51 
+walkpos 54,51 
+walkpos 54,50 
+walkpos 54,49 
+w 54,49,A 
+say hi
+delay 1000
+ifsay 以后也要,系统,已成人
+waitdlg ?,5,开始
+delay 500
+button 确定
+delay 1000
+waitdlg ?,5,开始
+button OK
+delay 500
+doffitem 仪之兜
+delay 500
+goto 开始
+end
+
+label 已成人
+chname 人物,成人over
+run 补血.xzs
+end

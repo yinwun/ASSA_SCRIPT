@@ -1,0 +1,33 @@
+label 补血
+run 回记录点.xzs
+walkpos 89,51
+walkpos 85,55
+walkpos 83,56
+walkpos 79,57
+walkpos 77,59
+walkpos 75,61
+walkpos 71,61
+walkpos 69,61
+walkpos 65,61
+walkpos 62,61
+walkpos 60,63
+walkpos 59,65
+walkpos 59,71
+walkpos 59,73
+walkpos 59,77
+walkpos 59,79
+label 卡位1
+walkpos 59,81
+walkpos 59,83
+walkpos 59,85
+walkpos 59,86
+EO
+ifpos 59,86,到达
+goto 卡位1
+
+label 到达
+w E
+delay 500
+say 补血
+
+end

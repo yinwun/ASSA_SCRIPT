@@ -1,0 +1,141 @@
+label 开始
+run 检测恶魔.xzs
+run 贝壳.xzs
+
+delay 100
+useitem 毒
+delay 300
+ifitem 103,!=,毒,-3
+
+ifpet ?,=,动物园养的拉斯基,带兔子找拉拉
+
+check 宠物,空位,>=,3,+3
+ifpet ?,=,波波顿,+2
+doffpet 3-5
+delay 1000
+set 丢非血肉,0
+
+delay 300
+check 人物,名称,=,抓猪和鱼,抓猪和鱼
+check 人物,名称,=,第一次找拉拉,第一次找拉拉
+check 人物,名称,=,找园丁,找园丁
+check 人物,名称,=,找七次拉拉,找七次拉拉
+check 人物,名称,=,打项圈,打项圈
+check 人物,名称,=,有项圈找拉拉,有项圈找拉拉
+check 人物,名称,=,打黑色服,打黑色服
+check 人物,名称,=,有黑服找拉拉,有黑服找拉拉
+check 人物,名称,=,黑旗和席格,黑旗和席格
+check 人物,名称,=,带兔子找拉拉,带兔子找拉拉
+check 人物,名称,=,交出兔子,交出兔子
+check 人物,名称,=,拿拉拉铠,拿拉拉铠
+check 人物,名称,=,动物园over,end
+
+
+label 准备
+chname 人物,抓猪和鱼
+
+label 抓猪和鱼
+delay 1000
+run 「做动物园」\『寂o星』动物园.xzs
+
+doffitem 肉食性饲料
+set 丢非血肉,1
+label lubin1
+delay 1000
+chname 人物,第一次找拉拉
+delay 1000
+check 人物,名称,!=,第一次找拉拉,-2
+label 第一次找拉拉
+delay 1000
+run 「做动物园」\『寂o星』里拉拉.xzs
+
+delay 1000
+chname 人物,找园丁
+delay 1000
+check 人物,名称,!=,找园丁,-2
+label 找园丁
+delay 1000
+run 「做动物园」\『寂o星』全自动萝卜.xzs
+
+delay 1000
+chname 人物,找七次拉拉
+delay 1000
+check 人物,名称,!=,找七次拉拉,-2
+label 找七次拉拉
+delay 1000
+run 「做动物园」\『寂o星』里拉拉.xzs
+
+chname 人物,打项圈
+delay 1000
+check 人物,名称,!=,打项圈,-2
+label 打项圈
+delay 1000
+run 「做动物园」\『寂o星』打项圈.xzs
+
+delay 1000
+chname 人物,有项圈找拉拉
+delay 1000
+check 人物,名称,!=,有项圈找拉拉,-2
+label 有项圈找拉拉
+delay 1000
+run 「做动物园」\『寂o星』里拉拉.xzs
+
+chname 人物,打黑色服
+delay 1000
+check 人物,名称,!=,打黑色服,-2
+label 打黑色服
+delay 1000
+run 「做动物园」\『寂o星』打黑色服.xzs
+
+delay 1000
+chname 人物,有黑服找拉拉
+delay 1000
+check 人物,名称,!=,有黑服找拉拉,-2
+label 有黑服找拉拉
+delay 1000
+run 「做动物园」\『寂o星』里拉拉.xzs
+
+delay 1000
+chname 人物,黑旗和席格
+delay 1000
+check 人物,名称,!=,黑旗和席格,-2
+label 黑旗和席格
+delay 1000
+run 「做动物园」\『寂o星』黑旗和席格.xzs
+
+delay 1000
+chname 人物,带兔子找拉拉
+delay 1000
+check 人物,名称,!=,带兔子找拉拉,-2
+label 带兔子找拉拉
+chname 人物,带兔子找拉拉
+delay 1000
+run 「做动物园」\『寂o星』里拉拉.xzs
+
+delay 1000
+chname 人物,交出兔子
+delay 1000
+check 人物,名称,!=,交出兔子,-2
+label 交出兔子
+delay 1000
+run 「做动物园」\『寂o星』交兔子.xzs
+
+delay 1000
+chname 人物,拿拉拉铠
+delay 1000
+check 人物,名称,!=,拿拉拉铠,-2
+label 拿拉拉铠
+delay 1000
+run 「做动物园」\『寂o星』里拉拉.xzs
+
+delay 1000
+chname 人物,动物园over
+say 已完成动物园
+chpet 0
+doffpet 2-5
+delay 200
+ifpet 2-5,!=,空位,-3
+doffitem 黑色的旗
+doffitem 里拉拉赠送的铠
+end
+
